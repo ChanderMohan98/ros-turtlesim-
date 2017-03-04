@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 		
 		/** test your code here **/
                  moveGoal(goal_pose,.00001);
-                 
+                 //the project is incomplete
                  
                  
 		
