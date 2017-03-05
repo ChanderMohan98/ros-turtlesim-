@@ -32,7 +32,7 @@ void moveGoal(turtlesim::Pose goal_pose, double distance_tolerance);
 int main(int argc, char **argv)
 {
 	// Initiate new ROS node named "talker"
-	ros::init(argc, argv, "turtlesim");
+	ros::init(argc, argv, "turtlesim_finder");
 	ros::NodeHandle n;
 	double speed, angular_speed;
 	double distance, angle;
