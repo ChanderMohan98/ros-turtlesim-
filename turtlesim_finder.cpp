@@ -53,6 +53,50 @@ int main(int argc, char **argv)
                  moveGoal(goal_pose,.00001);
                  //the project is incomplete
                  
+
+                         int i=0,j=0;
+		         int count =0;
+			int flag=0;
+
+			int x[10],y[10];
+		
+                
+                    while(1)
+                    {if(decode(i,j)==0)
+                      {
+                        if(i==9)
+			{ j++;
+			  goal_pose.x=i;
+		          goal_pose.y=j;
+                          moveGoal(goal_pose,.00001);
+                        }
+                        else
+		        {i++;
+                         move(1.0,1.0,1);
+			}
+                             
+	               }	
+                     else if(decode(i,j)==2)
+                     { count++;
+			cout<<" number " <<count <<" on point ("<<i<<","<<j<<") \n";
+                        j++;
+			  goal_pose.x=i;
+		          goal_pose.y=j;
+                          moveGoal(goal_pose,.00001);
+                     }
+                     else if(decode(i,j)==1)
+                     {   x[flag]=i;
+                         y[flag]=j;
+                        flag++;
+                         j++;
+			  goal_pose.x=i;
+		          goal_pose.y=j;
+                          moveGoal(goal_pose,.00001);
+                     } 
+                     if(count==9)
+                       break;
+                     }
+                 
                  
 		
 
@@ -204,5 +248,3 @@ void moveGoal(turtlesim::Pose  goal_pose, double distance_tolerance){
 velocity_publisher.publish(vel_msg);
 
 }
-
-
