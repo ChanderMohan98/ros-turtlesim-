@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	turtlesim::Pose goal_pose;
         goal_pose.x=0;
         goal_pose.y=0;
-	goal_pose.z=0;
+	
         
 
 	velocity_publisher = n.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 1000);
